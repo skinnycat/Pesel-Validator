@@ -18,26 +18,26 @@ function pesel(v) {
 	control = control.toString();
 	pesel[9] % 2 === 0 ? sex = 'f' : sex = 'm';
 	
-	$(pesel).each(function (k,v) {
+	$(pesel).each(function (index,currentElement) {
 		
-		switch(k) {
+		switch(index) {
 			case 0 :
 			case 4 :
 			case 8 :
-				runningTotal = runningTotal + (v * 1);
+				runningTotal = runningTotal + (currentElement * 1);
 				break;
 			case 1 :
 			case 5 :
 			case 9 :
-				runningTotal = runningTotal + (v * 3);
+				runningTotal = runningTotal + (currentElement * 3);
 				break;
 			case 2 :
 			case 6 :
-				runningTotal = runningTotal + (v * 7);
+				runningTotal = runningTotal + (currentElement * 7);
 				break;
 			case 3 :
 			case 7 :
-				runningTotal = runningTotal + (v * 9);
+				runningTotal = runningTotal + (currentElement * 9);
 				break;
 		}
 	});
